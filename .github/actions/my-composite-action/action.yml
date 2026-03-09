@@ -5,6 +5,10 @@ inputs:
   node-version:
     description: 'The Node.js version to use'
     required: true
+  registry-url:
+    required: true
+  scope:
+    required: true
 
 runs:
   using: 'composite'
@@ -13,3 +17,5 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-verson: ${{ inputs.node-verson }}
+        registry-url: ${{ inputs.registry-url }}
+        scope: ${{ inputs.scope }}
