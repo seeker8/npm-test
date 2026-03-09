@@ -1,6 +1,11 @@
 name: 'My composite Action'
 description: 'A reusable composite actions that checks out code and sets up Node.js'
 
+outputs:
+  scritp-result:
+    description: 'Result from the script'
+    value: ${{ steps.run-script.outputs.result }}
+
 inputs:
   node-version:
     description: 'The Node.js version to use'
@@ -19,3 +24,7 @@ runs:
         node-verson: ${{ inputs.node-verson }}
         registry-url: ${{ inputs.registry-url }}
         scope: ${{ inputs.scope }}
+    - name: Run script
+      id: run-script
+      run: echo "result=success" >> $GITHUB_OUTPUT
+      shell: bash
