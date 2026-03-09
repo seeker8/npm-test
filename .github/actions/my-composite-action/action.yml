@@ -2,7 +2,7 @@ name: 'My composite Action'
 description: 'A reusable composite actions that checks out code and sets up Node.js'
 
 outputs:
-  scritp-result:
+  script-result:
     description: 'Result from the script'
     value: ${{ steps.run-script.outputs.result }}
 
@@ -26,5 +26,5 @@ runs:
         scope: ${{ inputs.scope }}
     - name: Run script
       id: run-script
-      run: echo "result=Success" >> "$GITHUB_OUTPUT"
+      run: echo "result=Success" >> $GITHUB_OUTPUT
       shell: bash
