@@ -10,7 +10,7 @@ jobs:
       packages: write
     steps:
       - name: Use composite action
-        uses: .github/actions/my-composite-action
+        uses: './.github/actions/my-composite-action'
         with:
           node-version: '20.x'
           registry-url: 'https://npm.pkg.github.com'
