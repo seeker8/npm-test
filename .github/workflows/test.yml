@@ -1,0 +1,14 @@
+name: test workflow
+run-name: run by ${{ github.triggering_actor }}
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        run: echo hello world
