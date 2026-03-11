@@ -1,4 +1,5 @@
 name: test workflow
+run-name: run by ${{ github.triggering_actor }}
 
 on:
   pull_request:
